@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}
+<title>wow！ &#8211; 不如  来一盘2048？</title>
+{% endblock %}
+{% block see %}
+<div class="container">
+  <div class="row">
+  <h2 align="center">{{detail.name}} </h2>
+  <hr>
+
+    <div class="row"> 
+                    <div class="col-xs-12 col-sm-3 col-md-3">
+                            <img src="{{detail.img}}" class="img-responsive img-box img-thumbnail"> 
+                    </div> 
+                    <div class="col-xs-12 col-sm-9 col-md-9">
+                        <h2></h2>
+                        <h4>酒店位置：{{detail.address}}</h4>
+                        <h4>  评分：{{detail.score}}</h4>
+                        <p >{{detail.description}}</p>
+                    </div> 
+                </div>
+                <hr>
+
+
+  </div>
+</div>
+{% endblock %}

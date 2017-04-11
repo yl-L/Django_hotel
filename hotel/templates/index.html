@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}
+<title>wow！ &#8211; 不如  来一盘2048？</title>
+{% endblock %}
+{% block wraptype %}
+    <div class="wrap">
+{% endblock %}
+{% block content %}
+    {% load staticfiles %}
+            <div class="banner">
+            <div class="panel panel-default" id="hotelDescription">
+                <div class="panel-heading">
+                    <h3>系统介绍</h3>
+                </div>
+                <div class="panel-body">
+                   {{ description }}
+                </div>
+            </div>
+{% endblock %}
+{% block see %}
+<div class="container">
+  <div class="row">
+  <h1 align="center">携程酒店列表</h1>
+  <hr>
+  {% for hotel in hotels %}
+    <div class="row"> 
+                    <div class="col-xs-12 col-sm-3 col-md-3">
+                        <a href="hotel/{{hotel.id}}">
+                            <img src="{{hotel.img}}" class="img-responsive img-box img-thumbnail"> 
+                        </a>
+                    </div> 
+                    <div class="col-xs-12 col-sm-9 col-md-9">
+
+                        <h4><a href="hotel/{{hotel.id}}">{{hotel.name}}   评分：{{hotel.score}}</a></h4>
+                        <p id="description">{{hotel.description}}</p>
+                    </div> 
+                </div>
+                <hr>
+  {% endfor %}
+
+  </div>
+</div>
+{% endblock %}
